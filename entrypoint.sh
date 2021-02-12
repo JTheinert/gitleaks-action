@@ -11,7 +11,7 @@ echo running gitleaks "$(gitleaks --version) with the following command👇"
 
 if [ "$GITHUB_EVENT_NAME" = "push" ]
 then
-  echo gitleaks --path=$GITHUB_WORKSPACE -v $CONFIG --report=gitleaks-report.json
+  echo gitleaks --path=$GITHUB_WORKSPACE -v --report=gitleaks-report.json $CONFIG
   CAPTURE_OUTPUT=$(gitleaks --path=$GITHUB_WORKSPACE -v $CONFIG)
 elif [ "$GITHUB_EVENT_NAME" = "pull_request" ]
 then 
